@@ -14,13 +14,16 @@ spec:
   sources:
     - repoURL: https://github.com/ncameiri/argo_sync_2
       path: app1
-      project: default
+      spec:
+        project: default
       #targetRevision: 8.5.1
     - repoURL: https://github.com/ncameiri/argo_sync_2
       path: app2
-      project: default
+      spec:
+        project: default
       #targetRevision: 8.5.1
     - repoURL: https://github.com/ncameiri/argo_sync_2
       path: app3
-      project: default
+      spec:
+        project: default
       #targetRevision: 8.5.1

@@ -1,32 +1,26 @@
 
 apiVersion: argoproj.io/v1alpha1
 kind: Application
-metadata:
-  #name: test-app
-  namespace: argocd
-spec:
-  project: default
-  destination:
-    server: https://kubernetes.default.svc
-    namespace: default
-    project: default
+# spec:
+#   project: default
+#   destination:
+#     server: https://kubernetes.default.svc
+#     namespace: default
+#     project: default
 spec:
   sources:
     - repoURL: https://github.com/ncameiri/argo_sync_2
       path: app1
+      targetRevision: HEAD
       name: app1
-      spec:
-        project: default
       #targetRevision: 8.5.1
     - repoURL: https://github.com/ncameiri/argo_sync_2
       path: app2
+      targetRevision: HEAD
       name: app2
-      spec:
-        project: default
       #targetRevision: 8.5.1
     - repoURL: https://github.com/ncameiri/argo_sync_2
       path: app3
+      targetRevision: HEAD
       name: app3
-      spec:
-        project: default
       #targetRevision: 8.5.1

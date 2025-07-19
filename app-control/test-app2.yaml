@@ -1,0 +1,29 @@
+apiVersion: argoproj.io/v1alpha1
+kind: ApplicationSet
+metadata:
+  name: apps-set
+  namespace: argocd
+spec:
+  generators:
+    - list:
+        elements:
+          - name: app1
+            path: app1
+          - name: app2
+            path: app2
+          - name: app3
+            path: app3
+  template:
+    metadata:
+      name: app-set-teste
+    spec:
+      project: default
+      source:
+        repoURL: https://github.com/ncameiri/argo_sync_2
+        targetRevision: HEAD
+        path: app-control
+      destination:
+        server: https://kubernetes.default.svc
+        namespace: default
+      syncPolicy:
+        automated: {}

@@ -1,13 +1,11 @@
 
 apiVersion: argoproj.io/v1alpha1
 kind: Application
-# spec:
-#   project: default
-#   destination:
-#     server: https://kubernetes.default.svc
-#     namespace: default
-#     project: default
 spec:
+  project: default
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: default
   sources:
     - repoURL: https://github.com/ncameiri/argo_sync_2
       path: app1

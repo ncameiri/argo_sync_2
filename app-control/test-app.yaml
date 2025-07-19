@@ -9,6 +9,7 @@ spec:
   destination:
     server: https://kubernetes.default.svc
     namespace: default
+    project: default
 spec:
   sources:
     - repoURL: https://github.com/ncameiri/argo_sync_2
